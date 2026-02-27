@@ -2,3 +2,7 @@ data/dma.hjson
 data/dma_conf.svh
 rtl/dma_reg_pkg.sv
 rtl/dma_reg_top.sv
+build
+vendor
+vapor 
+                                                                                                                |
