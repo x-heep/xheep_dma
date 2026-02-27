@@ -1,6 +1,6 @@
 CAPI=2:
 
-name: "x-dma:tb:dma_tb" # name of project
+name: "xheep_dma:tb:dma_tb" # name of project
 description: "dma channel testbench"
 
 # Copyright 2021 OpenHW Group
@@ -10,7 +10,7 @@ description: "dma channel testbench"
 filesets:
   files_tb:
     depend: # on dma ip
-      - x-dma:ip:dma 
+      - xheep_dma:ip:dma 
     files:
       - dma_tb_wrapper.sv
       - tb_components.cpp: {file_type: cppSource}
@@ -26,7 +26,7 @@ filesets:
 
   files_verilator_waiver:
     files:
-      - ../hw/dma.vlt
+      - ../dma.vlt
       - tb_dma.vlt
     file_type: vlt
 

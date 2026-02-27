@@ -28,6 +28,7 @@ module dma_tb_wrapper
     import obi_pkg::*; 
     import fifo_pkg::*; 
     import reg_pkg::*;
+    import dma_reg_pkg::*;
 (
   /* Basic signals */
   input logic clk_i,
@@ -102,10 +103,25 @@ module dma_tb_wrapper
   /* Trigger slot */
   input logic [`SLOT_NUM_TB-1:0] trigger_slot_i,
 
+  /* New input signal */
+  
+  // status reg unwrapping: ready.d and window_done.d
+  input logic external_hw2reg_status_ready_d_i,
+  input logic external_hw2reg_status_window_done_d_i,
+  // window count reg unwrapping: d [7:0] and de
+  input logic [7:0] external_hw2reg_window_count_d_i,
+  input logic external_hw2reg_window_count_de_i,
+  // transaction ifr reg unwrapping: d
+  input logic external_hw2reg_transaction_ifr_d_i,
+  // window ifr reg unwrapping : d
+  input logic external_hw2reg_window_ifr_d_i,     
+
+  
   /* Output signals */
   output dma_done_intr_o,
   output dma_window_intr_o,
-  output dma_done_o    
+  output dma_done_o,   
+  output dma_ready_o
 );
 
     /* Internal signals */
@@ -127,6 +143,9 @@ module dma_tb_wrapper
     // hw fifo signals of possible tc accel 
     fifo_pkg::fifo_req_t hw_fifo_req;
     fifo_pkg::fifo_resp_t hw_fifo_rsp;
+
+    // dma external hw2reg signals
+    dma_reg_pkg::dma_hw2reg_t external_hw2reg;
 
     // is set to enable: not guaranteed (see dma.sv:162)
     logic clk_gate_en_n = 'b1;
@@ -213,7 +232,27 @@ module dma_tb_wrapper
         hw_fifo_rsp.data    = fifo_data_i;
     end
 
+    /* hw2reg wrapping */ 
+        /* hw2reg wrapping */ 
+  assign external_hw2reg = '{
+    // 1. Registri di Status (Quelli che l'hardware aggiorna davvero)
+    status: '{
+        ready:       '{d: external_hw2reg_status_ready_d_i},
+        window_done: '{d: external_hw2reg_status_window_done_d_i}
+    },
+    window_count: '{
+        d:  external_hw2reg_window_count_d_i,
+        de: external_hw2reg_window_count_de_i// Ricorda: serve il .de per scrivere!
+    },
+    
+    // 2. Interrupt Flags
+    transaction_ifr: '{d: external_hw2reg_transaction_ifr_d_i},
+    window_ifr:      '{d: external_hw2reg_window_ifr_d_i},
 
+    // 3. Tutti gli altri 24 campi della struct
+    // Usiamo default: '0 per evitare l'errore "missed initializing elements"
+    default: '0
+};
     /* Dma obi instance: parametrization is currently 
        fixed by wrapper */
 
@@ -248,6 +287,8 @@ module dma_tb_wrapper
 
         .trigger_slot_i,
 
+        .external_hw2reg_i (external_hw2reg),
+        .dma_ready_o,
         .dma_done_intr_o,
         .dma_window_intr_o,
         .dma_done_o 

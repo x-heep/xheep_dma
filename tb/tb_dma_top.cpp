@@ -136,7 +136,7 @@ int main (int argc, char *argv[]){
     vluint32_t src_ptr = 0x20;
     vluint32_t dst_ptr = 0xDD;
     vluint32_t d1_size = 0xA;
-    vluint32_t d2_stride = 0xA;
+    vluint32_t d2_stride = 0xAA;
     vluint32_t d2_size = 0x2;
     vluint32_t mock_value = 0xAF;
     // comes from host -> shouldn't be needed
@@ -363,7 +363,6 @@ int main (int argc, char *argv[]){
             //    step_cnt++;
                 // break;
 
-            // TODO: add the missing steps (copy filter elements, start computation, etc.)
             // case 5:
            
             default:

@@ -109,3 +109,44 @@
  lint_off -rule LATCH -file "*../src/x-dma_ip_dma_0/rtl/dma_units/dma_write_unit.sv" -match "Latch inferred for signal 'dma_tb_wrapper.u_dma_obi.dma_write_unit_i.byte_enable_out' (not all control paths of combinational always assign a value): ... Suggest use of always_latch for intentional latches"
  lint_off -rule IMPERFECTSCH -file "*../src/x-dma_ip_dma_0/rtl/dma.sv" -match "Imperfect scheduling of variable: 'dma_tb_wrapper.u_dma_obi.read_buffer_pop'"
 
+// DESCRIPTION: Verilator output: Waivers generated with --waiver-output
+
+
+// Below are suggested waivers. You have three options:
+//   1. Fix the reason for the linter warning in the Verilog sources
+//   2. Keep the waiver permanently if you are sure it is okay
+//   3. Keep the waiver temporarily to suppress the output
+lint_off -rule EOFNEWLINE -file "*../src/xheep_dma_ip_dma_0/include/fifo_pkg.sv" -match "Missing newline at end of file (POSIX 3.206).*"
+lint_off -rule EOFNEWLINE -file "*../src/xheep_dma_ip_dma_0/include/obi_pkg.sv" -match "Missing newline at end of file (POSIX 3.206).*"
+lint_off -rule EOFNEWLINE -file "*../src/xheep_dma_ip_dma_0/include/reg_pkg.sv" -match "Missing newline at end of file (POSIX 3.206).*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/clk_mux_glitch_free.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/cdc_fifo_gray_clearable.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/cdc_2phase_clearable.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk2' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk3' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk2' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk2' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/find_first_one.sv" -match "Unnamed generate block 'genblk3' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/generic_LFSR_8bit.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/generic_LFSR_8bit.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/prioarbiter.sv" -match "Unnamed generate block 'genblk2' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/fifo_v2.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/deprecated/fifo_v2.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule GENUNNAMED -file "*../src/pulp-platform.org__common_cells_1.29.0/src/gray_to_binary.sv" -match "Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Variable written to in always_comb also written by other process (IEEE 1800-2023 9.2.2.2): 'fifo_pop_o'*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Variable written to in always_comb also written by other process (IEEE 1800-2023 9.2.2.2): 'fifo_push_o'*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Variable written to in always_comb also written by other process (IEEE 1800-2023 9.2.2.2): 'fifo_flush_o'*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Variable written to in always_comb also written by other process (IEEE 1800-2023 9.2.2.2): 'fifo_data_o'*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bits [31:0] of signal 'hw_fifo_rsp' have multiple combinational drivers. This can cause performance degradation.*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bit [32] of signal 'hw_fifo_rsp' have multiple combinational drivers. This can cause performance degradation.*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bit [33] of signal 'hw_fifo_rsp' have multiple combinational drivers. This can cause performance degradation.*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bit [34] of signal 'hw_fifo_rsp' have multiple combinational drivers. This can cause performance degradation.*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bit [0] of signal 'fifo_pop_o' have multiple combinational drivers. This can cause performance degradation.*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bit [0] of signal 'fifo_push_o' have multiple combinational drivers. This can cause performance degradation.*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bit [0] of signal 'fifo_flush_o' have multiple combinational drivers. This can cause performance degradation.*"
+lint_off -rule MULTIDRIVEN -file "*../src/xheep_dma_tb_dma_tb_0/dma_tb_wrapper.sv" -match "Bits [31:0] of signal 'fifo_data_o' have multiple combinational drivers. This can cause performance degradation.*"
