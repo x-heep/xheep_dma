@@ -132,7 +132,7 @@ int main (int argc, char *argv[]){
     // ------------------
 
   
-    // TODO: Define simulation program variables
+    // Define simulation program variables
     vluint32_t src_ptr = 0x20;
     vluint32_t dst_ptr = 0xDD;
     vluint32_t d1_size = 0xA;
@@ -317,53 +317,7 @@ int main (int argc, char *argv[]){
                 obi_read_rsp = genObiRspTx (mock_value++);
                 obi_write_rsp = genObiRspTx(mock_value);
                 break;
-
-                // wait some cycles
-                //case 11 ... 15:
-                //    step_cnt++;
-                //    break;
-                // obi_accepted = false;
-                // Push expected data to the scoreboard checker queue
-                // When a read request is performed, the expected data is compared with the read data
-                // scb->scheduleObiCheck(obi_data);
-                // Prepare next data element
-                // obi_addr += 0x4;
-                // data_size += 0x4;
-                // if (data_size == A_SIZE) step_cnt++; // TODO: change exit condition with actual test data size
-                
-                // advance sim
-                // step_cnt++;
-                /// break;
-
-            // Wait some cycles
-            // case 1 ... 3:
-            //     obi_addr = 0;
-            //     data_size = 0;
-            //     step_cnt++;
-            //     break;
-
-            //case 16 ... 20:
-            // wait 
-            //        step_cnt++;
-            //        break;
-
-            // Read back stored data
-            //case 21:
-                // if (!obi_accepted) {
-                //     TB_LOG(LOG_HIGH, "Reading data from address '%x'", obi_addr);
-                //     obi_req = genObiReadReqTx(obi_addr); // this will trigger the check on the written data in step 0
-                //     break;
-                // }
-                // obi_accepted = false;
-                // obi_addr += 0x4;
-                // data_size += 0x4;
-                // if (data_size == A_SIZE) step_cnt++; // TODO: change exit condition with actual test data size
-            //    TB_LOG(LOG_HIGH, "Reading data from register offset '%x'", DMA_DST_PTR_REG_OFFSET);
-            //    reg_req = genRegReadReqTx (DMA_DST_PTR_REG_OFFSET);
-            //    step_cnt++;
-                // break;
-
-            // case 5:
+    
            
             default:
                 // Set simulation exit flag
