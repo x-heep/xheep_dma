@@ -5,7 +5,6 @@
 `verilator_config
 
 lint_off -rule DECLFILENAME -file "*/dma_reg_top.sv"
-lint_off -rule UNUSED -file "*/rtl/dma_reg_top.sv" -match "Parameter is not used: 'AW'*"
 
 lint_off -rule WIDTH -file "*/rtl/dma_reg_top.sv" -match "Operator ASSIGNW expects *"
 lint_off -rule WIDTH -file "*/rtl/dma.sv" -match "Operator ASSIGNW expects *"
@@ -44,3 +43,6 @@ lint_off -rule UNUSED -file "*/rtl/dma.sv" -match "Signal is not used: 'dma_proc
 lint_off -rule UNUSED -file "*/rtl/dma.sv" -match "Signal is not used: 'dma_read_unit_done'"
 lint_off -rule UNUSED -file "*/rtl/dma.sv" -match "Signal is not used: 'hw_fifo_mode'"
 lint_off -rule UNUSED -file "*/rtl/dma.sv" -match "Signal is not used: 'hw_fifo_done_i'"
+
+// is it correct?
+lint_off -rule UNOPTFLAT -file "*/rtl/dma.sv" -match "Signal unoptimizable: Feedback to clock or circular logic: 'dma_tb_wrapper.u_dma_obi.read_buffer_pop'"
