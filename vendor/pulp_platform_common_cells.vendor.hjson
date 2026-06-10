@@ -2,8 +2,8 @@
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
 // SPDX-License-Identifier: Apache-2.0
 {
-  name: "common_cells",
-  target_dir: "common_cells",
+  name: "pulp_platform_common_cells",
+  target_dir: "pulp_platform_common_cells",
 
   upstream: {
     url: "https://github.com/pulp-platform/common_cells.git",
