@@ -1,5 +1,6 @@
 # xheep_dma
-The configurable X-HEEP DMA
+
+The configurable X-HEEP DMA. For the full documentation, refer to X-HEEP's online [documentation](https://x-heep.readthedocs.io/en/latest/Peripherals/DMA.html).
 
 ## Quick Start
 
