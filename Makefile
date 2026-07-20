@@ -1,7 +1,8 @@
 REGTOOL ?= ../../vendor/pulp_platform/register_interface/vendor/lowrisc_opentitan/util/regtool.py
 NAME ?= $(notdir $(CURDIR))
-CFG = data/$(NAME).hjson 
+CFG = data/xheep_$(NAME).hjson
 SW = ../../../sw/device/lib/drivers
+DMA_GEN ?= dma_example.hjson
 
 RTL_REG_DEFINES = rtl/$(NAME)_reg_pkg.sv rtl/$(NAME)_reg_top.sv
 CDEFINES = $(SW)/$(NAME)/$(NAME)_regs.h
@@ -14,3 +15,11 @@ $(RTL_REG_DEFINES): $(CFG)
 
 $(CDEFINES): $(CFG)
 	$(REGTOOL) --cdefines -o $@ $<
+
+.PHONY: vendor
+vendor:
+	python3 util/vendor.py -Uv python/vendor/peripherals.vendor.hjson
+
+.PHONY: dma-gen
+dma-gen:
+	PYTHONPATH=python python3 -m python.dma_gen --config $(DMA_GEN) --outdir .
