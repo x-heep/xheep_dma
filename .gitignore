@@ -13,3 +13,4 @@ rtl/dma_pkg.sv
 
 # Python cache
 __pycache__/
+python/vendor/__pycache__/
