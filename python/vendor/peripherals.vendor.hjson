@@ -1,0 +1,14 @@
+{
+  name: "peripherals",
+  target_dir: "peripherals",
+
+  upstream: {
+    url: "https://github.com/x-heep/xheep_gen.git",
+    rev: "95efdefe2b8d38d9752fa9ba59666dbe5faf212e",
+  },
+
+  mapping: [
+    {from: "peripherals/__init__.py", to: "__init__.py"},
+    {from: "peripherals/abstractions.py", to: "abstractions.py"},
+  ]
+}
